@@ -1,0 +1,26 @@
+{
+  "name": "nodebb-plugin-emailer-postmark",
+  "version": "0.0.0",
+  "description": "An emailer plugin for NodeBB using Postmark as a third party service",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/julianlam/nodebb-plugin-emailer-postmark"
+  },
+  "keywords": [
+    "nodebb",
+    "plugin",
+    "emailer",
+    "postmark"
+  ],
+  "author": "Julian Lam <julian@designcreateplay.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/julianlam/nodebb-plugin-emailer-postmark/issues"
+  },
+  "homepage": "https://github.com/julianlam/nodebb-plugin-emailer-postmark",
+  "dependencies": {
+    "path": "~0.4.9",
+    "postmark": "~0.2.0"
+  }
+}
