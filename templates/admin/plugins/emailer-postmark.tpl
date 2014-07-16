@@ -7,7 +7,7 @@
 				Postmark removes the headaches of delivering and parsing transactional email for webapps with minimal setup time and zero maintenance. We have years of experience getting email to the inbox, so you can work and rest easier.
 			</p>
 			<p>
-				Use our Send API or our simple SMTP interface to start sending in minutes, & use our Inbound API to easily parse incoming emails.
+				Use our Send API or our simple SMTP interface to start sending in minutes, &amp; use our Inbound API to easily parse incoming emails.
 			</p>
 		</blockquote>
 		<p>
