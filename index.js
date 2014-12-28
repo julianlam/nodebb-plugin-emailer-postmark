@@ -1,18 +1,15 @@
 (function() {
-	"use strict";
+	'use strict';
 	/* globals require, module */
 
-	var	fs = require('fs'),
-		path = require('path'),
-
-		winston = module.parent.require('winston'),
+	var	winston = module.parent.require('winston'),
 		Meta = module.parent.require('./meta'),
 
-		Postmark = require("postmark")(Meta.config['postmark:apiKey']),
+		Postmark = require('postmark')(Meta.config['postmark:apiKey']),
 		Emailer = {};
 
 	Emailer.init = function(app, middleware, controllers, callback) {
-		function render(req, res, next) {
+		function render(req, res) {
 			res.render('admin/plugins/emailer-postmark', {});
 		}
 
@@ -24,11 +21,11 @@
 
 	Emailer.send = function(data) {
 		Postmark.send({
-			"From": data.from,
-			"To": data.to,
-			"Subject": data.subject,
-			"TextBody": data.plaintext,
-			"HtmlBody": data.html
+			'From': data.from,
+			'To': data.to,
+			'Subject': data.subject,
+			'TextBody': data.plaintext,
+			'HtmlBody': data.html
 		}, function (err) {
 			if (!err) {
 				winston.info('[emailer.postmark] Sent `' + data.template + '` email to uid ' + data.uid);
@@ -42,9 +39,9 @@
 	Emailer.admin = {
 		menu: function(custom_header, callback) {
 			custom_header.plugins.push({
-				"route": '/plugins/emailer-postmark',
-				"icon": 'fa-envelope-o',
-				"name": 'Emailer (Postmark)'
+				'route': '/plugins/emailer-postmark',
+				'icon': 'fa-envelope-o',
+				'name': 'Emailer (Postmark)'
 			});
 
 			callback(null, custom_header);
