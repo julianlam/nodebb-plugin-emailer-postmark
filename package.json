@@ -1,6 +1,6 @@
 {
   "name": "nodebb-plugin-emailer-postmark",
-  "version": "0.3.1",
+  "version": "0.4.0",
   "description": "An emailer plugin for NodeBB using Postmark as a third party service",
   "main": "index.js",
   "repository": {
