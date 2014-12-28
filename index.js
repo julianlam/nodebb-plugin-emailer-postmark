@@ -8,13 +8,13 @@
 		Postmark = require('postmark')(Meta.config['postmark:apiKey']),
 		Emailer = {};
 
-	Emailer.init = function(app, middleware, controllers, callback) {
+	Emailer.init = function(data, callback) {
 		function render(req, res) {
 			res.render('admin/plugins/emailer-postmark', {});
 		}
 
-		app.get('/admin/plugins/emailer-postmark', middleware.admin.buildHeader, render);
-		app.get('/api/admin/plugins/emailer-postmark', render);
+		data.router.get('/admin/plugins/emailer-postmark', data.middleware.admin.buildHeader, render);
+		data.router.get('/api/admin/plugins/emailer-postmark', render);
 
 		callback();
 	};
