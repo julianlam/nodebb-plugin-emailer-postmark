@@ -19,7 +19,7 @@
 		callback();
 	};
 
-	Emailer.send = function(data) {
+	Emailer.send = function(data, callback) {
 		Postmark.send({
 			'From': data.from,
 			'To': data.to,
@@ -33,6 +33,8 @@
 				winston.warn('[emailer.postmark] Unable to send `' + data.template + '` email to uid ' + data.uid + '!!');
 				winston.error('[emailer.postmark] ' + err.message);
 			}
+
+			callback();
 		});
 	};
 
